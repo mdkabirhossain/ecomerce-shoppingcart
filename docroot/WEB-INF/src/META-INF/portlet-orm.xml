@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.dynamic.model.impl.CityModelImpl">
+		<attributes>
+			<id name="cityId" />
+			<basic name="stateId" />
+			<basic name="cityName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.dynamic.model.impl.CountriesModelImpl">
+		<attributes>
+			<id name="countryId" />
+			<basic name="shortname" />
+			<basic name="countryName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.dynamic.model.impl.StateModelImpl">
+		<attributes>
+			<id name="stateId" />
+			<basic name="countryId" />
+			<basic name="stateName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.dynamic.model.impl.CityImpl" name="City">
+		<table name="z_City" />
+		<attributes />
+	</entity>
+	<entity class="com.dynamic.model.impl.CountriesImpl" name="Countries">
+		<table name="z_Countries" />
+		<attributes />
+	</entity>
+	<entity class="com.dynamic.model.impl.StateImpl" name="State">
+		<table name="z_State" />
+		<attributes />
+	</entity>
+</entity-mappings>

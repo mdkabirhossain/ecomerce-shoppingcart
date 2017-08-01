@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.dynamic.service.CityLocalService" class="com.dynamic.service.impl.CityLocalServiceImpl" />
+	<bean id="com.dynamic.service.persistence.CityPersistence" class="com.dynamic.service.persistence.CityPersistenceImpl" parent="basePersistence" />
+	<bean id="com.dynamic.service.CountriesLocalService" class="com.dynamic.service.impl.CountriesLocalServiceImpl" />
+	<bean id="com.dynamic.service.persistence.CountriesPersistence" class="com.dynamic.service.persistence.CountriesPersistenceImpl" parent="basePersistence" />
+	<bean id="com.dynamic.service.StateLocalService" class="com.dynamic.service.impl.StateLocalServiceImpl" />
+	<bean id="com.dynamic.service.persistence.StatePersistence" class="com.dynamic.service.persistence.StatePersistenceImpl" parent="basePersistence" />
+</beans>

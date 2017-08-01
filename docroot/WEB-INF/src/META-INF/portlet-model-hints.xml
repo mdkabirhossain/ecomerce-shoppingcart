@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.dynamic.model.City">
+		<field name="stateId" type="long" />
+		<field name="cityId" type="long" />
+		<field name="cityName" type="String" />
+	</model>
+	<model name="com.dynamic.model.Countries">
+		<field name="countryId" type="long" />
+		<field name="shortname" type="String" />
+		<field name="countryName" type="String" />
+	</model>
+	<model name="com.dynamic.model.State">
+		<field name="countryId" type="long" />
+		<field name="stateId" type="long" />
+		<field name="stateName" type="String" />
+	</model>
+</model-hints>

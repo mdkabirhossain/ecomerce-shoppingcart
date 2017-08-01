@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.dynamic">
+	<author>Abhishek</author>
+	<namespace>z</namespace>
+
+
+
+ 	<entity name="Countries" local-service="true" remote-service="false">
+		<column name="countryId" type="long" primary="true" />
+		<column name="shortname" type="String"/>
+		<column name="countryName" type="String" />		
+		<finder return-type="Countries" name="countryName">
+		<finder-column name="countryName"/>
+		</finder>
+	</entity>
+	
+	
+	<entity name="State" local-service="true" remote-service="false">
+		<column name="countryId" type="long" />
+		<column name="stateId" type="long" primary="true" />
+		<column name="stateName" type="String" />
+		<finder return-type="State" name="stateName">
+		<finder-column name="stateName"/>
+		</finder>
+		<finder return-type="Collection" name="CountryId">
+		<finder-column name="countryId"/>
+		</finder>
+	</entity>
+	
+	
+	<entity name="City" local-service="true" remote-service="false">
+		<column name="stateId" type="long" />
+		<column name="cityId" type="long" primary="true" />
+		<column name="cityName" type="String" />
+		<finder return-type="City" name="cityName">
+		<finder-column name="cityName"/>
+		</finder>
+		<finder return-type="Collection" name="StateId">
+		<finder-column name="stateId"/>
+		</finder>
+	</entity>
+		
+
+</service-builder>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.dynamic.model.City" />
+	<import class="com.dynamic.model.Countries" />
+	<import class="com.dynamic.model.State" />
+	<class name="com.dynamic.model.impl.CityImpl" table="z_City">
+		<cache usage="read-write" />
+		<id name="cityId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="stateId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="cityName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.dynamic.model.impl.CountriesImpl" table="z_Countries">
+		<cache usage="read-write" />
+		<id name="countryId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="shortname" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="countryName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.dynamic.model.impl.StateImpl" table="z_State">
+		<cache usage="read-write" />
+		<id name="stateId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="countryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="stateName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>
